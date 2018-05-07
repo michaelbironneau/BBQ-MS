@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM resin/raspberrypi3-debian:jessie
 
 #switch on systemd init system in container
 ENV INITSYSTEM on
@@ -7,7 +7,7 @@ ENV INITSYSTEM on
 # For caching until requirements.txt changes
 COPY ./requirements.txt /requirements.txt
 RUN python -m pip install --upgrade pip setuptools wheel
-RUN READTHEDOCS=True pip install -r /requirements.txt
+RUN pip install -r /requirements.txt
 RUN sudo apt-get update && \
 	sudo apt-get install build-essential python-dev python-pip python-smbus git
 
