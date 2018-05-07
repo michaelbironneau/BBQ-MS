@@ -1,0 +1,19 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-python
+
+#switch on systemd init system in container
+ENV INITSYSTEM on
+
+# pip install python deps from requirements.txt
+# For caching until requirements.txt changes
+COPY ./requirements.txt /requirements.txt
+RUN READTHEDOCS=True pip install -r /requirements.txt
+RUN sudo apt-get update && \
+	sudo apt-get install build-essential python-dev python-pip python-smbus git && \
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+RUN git clone https://github.com/adafruit/Adafruit_Python_MAX31855.git && \
+	cd Adafruit_Python_MAX31855 && \
+	sudo python setup.py install && \
+	cd ..
+CMD ["bash","start.sh"]
