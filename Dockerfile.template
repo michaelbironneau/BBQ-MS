@@ -15,6 +15,6 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 RUN git clone https://github.com/adafruit/Adafruit_Python_MAX31855.git && \
 	cd Adafruit_Python_MAX31855 && \
-	duso python setup.py install && \
+	sudo python setup.py install && \
 	cd ..
 CMD ["bash","start.sh"]
