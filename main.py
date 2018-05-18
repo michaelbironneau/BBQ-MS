@@ -72,8 +72,8 @@ while True:
     temp_1 = sensor.readTempC()
     internal_1 = sensor.readInternalC()
     
-    temp_2  = sensor.readTempC()
-    internal_2 = sensor.readInternalC()
+    temp_2  = sensor_2.readTempC()
+    internal_2 = sensor_2.readInternalC()
     
     print('Sensor @(25,24,18): Internal {0:0.3F}*C | Thermocouple {1:0.3F}*C'.format(internal_1, temp_1))
     print('Sensor @(22,27,17): Internal {0:0.3F}*C | Thermocouple {1:0.3F}*C'.format(internal_2, temp_2))
