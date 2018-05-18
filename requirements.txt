@@ -1,2 +1,5 @@
 RPi.GPIO
 Adafruit_BBIO
+apscheduler
+redis
+azure-iothub-device-client
