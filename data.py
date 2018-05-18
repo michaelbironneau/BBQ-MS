@@ -43,7 +43,7 @@ class eventhub_sender():
             print('Unable to access Redis: {0}'.format(repr(e)))
             return None
 
-    def get_reading(sensor, sensor_name):
+    def get_reading(self, sensor, sensor_name):
         try:
              t = float(sensor.readTempC())
              if math.isnan(t):
