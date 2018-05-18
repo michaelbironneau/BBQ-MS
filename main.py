@@ -43,7 +43,7 @@ if __name__ == '__main__':
                              os.getenv('SHARED_KEY', settings.get('shared-key', '')),
                              os.getenv('PROTOCOL', settings.get('protocol', 'mqtt')))
     scheduler.add_job(sender.read,
-                      'interval', seconds=settings.get('read-interval', 1),
+                      'interval', seconds=settings.get('read-interval', 5),
                       id='read_data', coalesce=True)
     scheduler.add_job(sender.send,
                       'interval', seconds=settings.get('data-send-interval', 1),
