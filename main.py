@@ -85,9 +85,9 @@ while True:
 
     t2 = float(temp_2)
     if math.isnan(t2):
-        print('Sensor @(25,24,18): Internal {0:0.3F}*C | Thermocouple {1}'.format(internal_2, temp_2))
+        print('Sensor @(22,27,17): Internal {0:0.3F}*C | Thermocouple {1}'.format(internal_2, temp_2))
     else:    
-        print('Sensor @(25,24,18): Internal {0:0.3F}*C | Thermocouple {1:0.3F}*C'.format(internal_2, temp_2))
+        print('Sensor @(22,27,17): Internal {0:0.3F}*C | Thermocouple {1:0.3F}*C'.format(internal_2, temp_2))
    
     #print('Thermocouple Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(temp, c_to_f(temp)))
     #print('    Internal Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(internal, c_to_f(internal)))
