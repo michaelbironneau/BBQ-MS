@@ -11,6 +11,7 @@ from data import eventhub_sender
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_GPIO.MAX31855 as MAX31855
 from apscheduler.schedulers.blocking import BlockingScheduler
+import os
 
 # Raspberry Pi software SPI configuration.
 CLK = 25
