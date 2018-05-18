@@ -44,6 +44,12 @@ CS  = 24
 DO  = 18
 sensor = MAX31855.MAX31855(CLK, CS, DO)
 
+# Sensor 2
+CLK_2 = 22
+DO_2 = 17
+CS_2 = 27
+sensor_2 = MAX31855.MAX31855(CLK_2, CS_2, DO_2)
+
 # Raspberry Pi hardware SPI configuration.
 #SPI_PORT   = 0
 #SPI_DEVICE = 0
@@ -63,8 +69,15 @@ sensor = MAX31855.MAX31855(CLK, CS, DO)
 # Loop printing measurements every second.
 print('Press Ctrl-C to quit.')
 while True:
-    temp = sensor.readTempC()
-    internal = sensor.readInternalC()
-    print('Thermocouple Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(temp, c_to_f(temp)))
-    print('    Internal Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(internal, c_to_f(internal)))
+    temp_1 = sensor.readTempC()
+    internal_1 = sensor.readInternalC()
+    
+    temp_2  = sensor.readTempC()
+    internal_2 = sensor.readInternalC()
+    
+    print('Sensor @(25,24,18): Internal {0:0.3F}*C | Thermocouple {1:0.3F}*C'.format(internal_1, temp_1))
+    print('Sensor @(22,27,17): Internal {0:0.3F}*C | Thermocouple {1:0.3F}*C'.format(internal_2, temp_2))
+    
+    #print('Thermocouple Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(temp, c_to_f(temp)))
+    #print('    Internal Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(internal, c_to_f(internal)))
     time.sleep(1.0)
