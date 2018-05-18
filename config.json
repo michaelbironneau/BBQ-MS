@@ -1,0 +1,6 @@
+{
+  "read-interval": 1,
+  "data-send-interval": 1,
+  "iot-host": "oeiot.azure-devices.net",
+  "require-ntp": true
+}
