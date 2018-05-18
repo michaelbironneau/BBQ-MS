@@ -79,7 +79,7 @@ class eventhub_sender():
             self.redis.lpush('readings', reading_meat)
         reading_grill = self.get_reading(self.grill_sensor, "grill")
         if reading_grill:
-            self.redis.lpush('readings', json.dumps(reading_grill))
+            self.redis.lpush('readings', reading_grill)
         
     def send(self):
         # Check if last good transmission is over 120s ago, try to reconnect if so
